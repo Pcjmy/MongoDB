@@ -13,8 +13,8 @@ async function main() {
   console.log("Connected successfully to server");
   const db = client.db(dbName);
   const collection = db.collection("user1");
-
-  // the following code examples can be pasted here...
+  const findResult = await collection.find({}).toArray();
+  console.log("Found documents =>", findResult);
 
   return "mongodb 连接成功";
 }
