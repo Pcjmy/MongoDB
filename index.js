@@ -19,6 +19,11 @@ async function main() {
     { username: "xyz" },
   ]);
   console.log("Inserted documents =>", insertResult);
+  const updateResult = await collection.updateOne(
+    { username: "zhangsan" },
+    { $set: { age: 21 } }
+  );
+  console.log("Updated documents =>", updateResult);
   const findResult = await collection.find({ city: "beijing" }).toArray();
   console.log("Found documents =>", findResult);
 
