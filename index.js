@@ -13,7 +13,7 @@ async function main() {
   console.log("Connected successfully to server");
   const db = client.db(dbName);
   const collection = db.collection("user1");
-  const findResult = await collection.find({}).toArray();
+  const findResult = await collection.find({ city: "beijing" }).toArray();
   console.log("Found documents =>", findResult);
 
   return "mongodb 连接成功";
