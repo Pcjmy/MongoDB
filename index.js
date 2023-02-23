@@ -13,17 +13,19 @@ async function main() {
   console.log("Connected successfully to server");
   const db = client.db(dbName);
   const collection = db.collection("user1");
-  const insertResult = await collection.insertMany([
-    { username: "hello" },
-    { username: "abc" },
-    { username: "xyz" },
-  ]);
-  console.log("Inserted documents =>", insertResult);
-  const updateResult = await collection.updateOne(
-    { username: "zhangsan" },
-    { $set: { age: 21 } }
-  );
-  console.log("Updated documents =>", updateResult);
+  // const insertResult = await collection.insertMany([
+  //   { username: "hello" },
+  //   { username: "abc" },
+  //   { username: "xyz" },
+  // ]);
+  // console.log("Inserted documents =>", insertResult);
+  // const updateResult = await collection.updateOne(
+  //   { username: "zhangsan" },
+  //   { $set: { age: 21 } }
+  // );
+  // console.log("Updated documents =>", updateResult);
+  const deleteResult = await collection.deleteMany({ username: "abc" });
+  console.log("Deleted documents =>", deleteResult);
   const findResult = await collection.find({ city: "beijing" }).toArray();
   console.log("Found documents =>", findResult);
 
