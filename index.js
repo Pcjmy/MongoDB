@@ -13,6 +13,12 @@ async function main() {
   console.log("Connected successfully to server");
   const db = client.db(dbName);
   const collection = db.collection("user1");
+  const insertResult = await collection.insertMany([
+    { username: "hello" },
+    { username: "abc" },
+    { username: "xyz" },
+  ]);
+  console.log("Inserted documents =>", insertResult);
   const findResult = await collection.find({ city: "beijing" }).toArray();
   console.log("Found documents =>", findResult);
 
