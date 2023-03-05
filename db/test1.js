@@ -24,6 +24,10 @@ const { User } = require('./model')
 
   // 查询数据
   // const userList = await User.find()
-  const userList = await User.find().sort({age: -1})
-  console.log(userList)
+  // const userList = await User.find().sort({age: -1})
+  // console.log(userList)
+
+  // 查询单条数据，返回的对象
+  const user = await User.findOne({ username: 'zhangsan'})
+  console.log(user)
 })()
