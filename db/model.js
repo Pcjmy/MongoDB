@@ -21,9 +21,22 @@ const UserSchema = mongoose.Schema({
   timestamps: true // 时间戳，自动添加文档的创建时间
 })
 
-// 定义 Model
+// 定义 User Model
 const User = mongoose.model('user', UserSchema)
 
+// 定义 Comment Schema
+const CommentSchema = mongoose.Schema({
+  content: {
+    type: String,
+    required: true // 必需
+  },
+  username: String // 用户名
+}, { timestamps: true })
+
+// 定义 Comment Model
+const Comment = mongoose.model('comment', CommentSchema)
+
 module.exports = {
-  User
+  User,
+  Comment
 }
