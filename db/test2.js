@@ -12,4 +12,6 @@ const { User } = require('./model')
   )
   console.log(updateResult)
   // 删除
+  const removeResult = await User.deleteOne({username: 'lisi'})
+  console.log(removeResult)
 })()
