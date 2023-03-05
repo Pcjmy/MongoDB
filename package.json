@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Pcjmy/MongoDB#readme",
   "dependencies": {
     "mongodb": "^5.0.1",
+    "mongoose": "^7.0.0",
     "nodemon": "^2.0.20"
   }
 }
