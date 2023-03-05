@@ -14,11 +14,15 @@ const { User } = require('./model')
   // })
   // zhangsan.save()
 
-  const lisi = await User.create({
-    username: 'lisi',
-    password: '123',
-    age: 23,
-    city: 'shanghai'
-  })
-  console.log('lisi 创建完成', lisi)
+  // const lisi = await User.create({
+  //   username: 'lisi',
+  //   password: '123',
+  //   age: 23,
+  //   city: 'shanghai'
+  // })
+  // console.log('lisi 创建完成', lisi)
+
+  // 查询数据
+  const userList = await User.find()
+  console.log(userList)
 })()
