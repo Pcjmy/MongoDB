@@ -23,6 +23,7 @@ const { User } = require('./model')
   // console.log('lisi 创建完成', lisi)
 
   // 查询数据
-  const userList = await User.find()
+  // const userList = await User.find()
+  const userList = await User.find().sort({age: -1})
   console.log(userList)
 })()
